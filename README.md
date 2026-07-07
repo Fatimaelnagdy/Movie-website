@@ -58,7 +58,7 @@ movie-website/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/movie-explorer.git
+   git clone https://github.com/Fatimaelnagdy/Movie-website.git
    ```
 
 2. Navigate to the project folder:
@@ -96,11 +96,5 @@ const API_KEY = "your_api_key_here";
 
 **Fatima Magdy Abdelnaby**
 Computer Science & AI Student | Front-End Developer
-
----
-
-## ⭐ Support
-
-If you like this project, consider giving it a ⭐ on GitHub!
 
 ---
