@@ -64,7 +64,7 @@ movie-website/
 2. Navigate to the project folder:
 
    ```bash
-   cd movie-explorer
+   cd Movie-website
    ```
 
 3. Open `index.html` in your browser
