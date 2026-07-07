@@ -41,13 +41,13 @@ This project allows users to search for movies, explore details, and save their 
 ## 📂 Project Structure
 
 ```
-movie-explorer/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   └── images/
+movie-website/
+│── index.html
+│── categories.html
+│── filteration.html
+│── movie-details.html
+│── css/
+│── js/
 └── README.md
 ```
 
