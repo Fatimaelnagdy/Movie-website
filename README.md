@@ -1,4 +1,4 @@
-# 🎬 Movie Explorer
+# 🎬 Movie Website
 
 A modern and responsive movie search application built using **HTML, CSS, and JavaScript**, powered by the **TMDB API**.
 This project allows users to search for movies, explore details, and save their favorites in a clean and interactive interface.
@@ -97,4 +97,3 @@ const API_KEY = "your_api_key_here";
 **Fatima Magdy Abdelnaby**
 Computer Science & AI Student | Front-End Developer
 
----
