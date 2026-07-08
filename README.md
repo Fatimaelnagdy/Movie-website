@@ -1,13 +1,13 @@
 # 🎬 Movie Explorer
 
-A modern and responsive movie search application built using **HTML, CSS, and JavaScript**, powered by the **OMDb API**.
+A modern and responsive movie search application built using **HTML, CSS, and JavaScript**, powered by the **TMDB API**.
 This project allows users to search for movies, explore details, and save their favorites in a clean and interactive interface.
 
 ---
 
 ## 🚀 Live Demo
 
-*(Add your deployed link here if available)*
+*https://fatimaelnagdy.github.io/Movie-website/*
 
 ---
 
@@ -16,7 +16,7 @@ This project allows users to search for movies, explore details, and save their 
 * 🔍 **Search Movies** by title in real-time
 * 🎬 **View Movie Details** (poster, rating, year, plot)
 * ❤️ **Add to Favorites** using Local Storage
-* 📱 **Responsive Design** (works on mobile & desktop)
+* 📱 **Responsive Design** 
 * ⚡ **Fast & Dynamic UI** using JavaScript Fetch API
 * 🚫 **Error Handling** for invalid searches or API issues
 
@@ -26,15 +26,16 @@ This project allows users to search for movies, explore details, and save their 
 
 * **HTML5**
 * **CSS3**
+* **Bootstrap 5**
 * **JavaScript (ES6+)**
-* **OMDb API**
+* **TMDB API**
 
 ---
 
 ## 🔗 API Used
 
-* OMDb API
-  https://www.omdbapi.com/
+* TMDB API
+  https://www.themoviedb.org/documentation/api
 
 ---
 
@@ -44,11 +45,9 @@ This project allows users to search for movies, explore details, and save their 
 movie-website/
 │── index.html
 │── categories.html
-│── filteration.html
 │── movie-details.html
 │── css/
-│── js/
-└── README.md
+└── js/
 ```
 
 ---
@@ -71,11 +70,12 @@ movie-website/
 
 ---
 
-## 🔑 Setup API Key
+🔑 Setup API Key
 
-1. Go to: https://www.omdbapi.com/apikey.aspx
-2. Get your free API key
-3. Replace it in your `script.js` file:
+* Create an account on TMDB
+* Go to your account settings → API
+* Generate your API key
+* Add it in your script.js file
 
 ```javascript
 const API_KEY = "your_api_key_here";
