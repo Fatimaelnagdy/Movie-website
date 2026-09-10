@@ -1,0 +1,36 @@
+body{
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --dark-color: #19283f;
+    --green-color: #33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
+    --section-color: #eff7fa;
+}
+.nav{
+    background-color: var(--dark-color);
+    height: 10vh;
+}
+.logo{
+    color: var(--green-color);
+}
+.nav-ele{
+    text-decoration: none;
+    color: #fff;
+    padding-right: 10px;
+}
+.search{
+    border-radius: 5px;
+    border: 1px solid var(--green-color);
+    padding: 4px 15px;
+}
+.carousel-item img{
+    height: 85vh;
+}
+.slider-rate{
+    background:linear-gradient(to top,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.2));
+    border: none;
+    border-radius: 8px;
+}
