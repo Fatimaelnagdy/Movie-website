@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Website</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -18,6 +15,7 @@
 </head>
 
 <body>
+    <!-- start nav -->
     <nav class="navbar nav">
         <div class="container-fluid">
             <div>
@@ -31,28 +29,44 @@
             </form>
         </div>
     </nav>
+    <!-- end nav -->
     <!-- start slider -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/images/features-01.jpg" class="d-block w-100" alt="...">
+                <img class="d-block w-100 hero-img" alt="...">
                 <div class="carousel-caption d-none d-md-block slider-rate">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5 class="hero-title"></h5>
+                    <i class="fa-solid fa-star"></i>
+                    <span class=" hero-rate"></span>
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-play"></i>
+                        Watch Trailer
+                    </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/images/features-02.jpg" class="d-block w-100" alt="...">
+                <img src="" class="d-block w-100 hero-img" alt="...">
                 <div class="carousel-caption d-none d-md-block slider-rate">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                    <h5 class="hero-title"></h5>
+                    <i class="fa-solid fa-star"></i>
+                    <span class=" hero-rate"></span>
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-play"></i>
+                        Watch Trailer
+                    </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/images/features-03.jpg" class="d-block w-100" alt="...">
+                <img src="" class="d-block w-100 hero-img" alt="...">
                 <div class="carousel-caption d-none d-md-block slider-rate">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <h5 class="hero-title"></h5>
+                    <i class="fa-solid fa-star"></i>
+                    <span class=" hero-rate"></span>
+                    <button class="btn btn-danger">
+                        <i class="fa-solid fa-play"></i>
+                        Watch Trailer
+                    </button>
                 </div>
             </div>
         </div>
@@ -68,8 +82,61 @@
         </button>
     </div>
     <!-- end slider -->
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- start trending mov section -->
+    <section class="trending container">
+        <h2>Trending Movies</h2>
+    </section>
+
+    <!-- start trending tv section -->
+    <section class="trending container">
+        <h2>Trending Tv</h2>
+    </section>
+
+    <!-- start top mov section -->
+    <section class="trending container">
+        <h2>Top Movies</h2>
+    </section>
+
+    <!-- start top tv section -->
+    <section class="trending container">
+        <h2>Top Tv</h2>
+    </section>
+
+    <!-- start footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>
+                    We build modern and responsive websites with clean design and great
+                    performance.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: example@email.com</p>
+                <p>Phone: +20 100 000 0000</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Your Website | All Rights Reserved</p>
+        </div>
+    </footer>
+    <!-- start script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
