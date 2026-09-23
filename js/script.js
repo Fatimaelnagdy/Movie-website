@@ -184,7 +184,7 @@ async function getTopMovies() {
     `;
 
             card.addEventListener("click", () => {
-                window.location.href = `details.html?id=${element.id}&type=${element.media_type}`
+                window.location.href = `details.html?id=${element.id}&type=movie`
             });
 
             content.appendChild(card);
@@ -227,7 +227,7 @@ async function getTopTv() {
     `;
 
             card.addEventListener("click", () => {
-                window.location.href = `details.html?id=${element.id}&type=${element.media_type}`
+                window.location.href = `details.html?id=${element.id}&type=tv`
             });
 
             content.appendChild(card);

@@ -142,14 +142,11 @@ body {
 
 .casts::-webkit-scrollbar {
     height: 5px;
+    background-color:#f2fcff;
 }
 
 .casts::-webkit-scrollbar-button {
     display: none;
-}
-
-.casts::-webkit-scrollbar-track {
-    background: white;
 }
 
 .casts::-webkit-scrollbar-thumb {

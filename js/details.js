@@ -12,8 +12,6 @@ const options = {
 const param =new URLSearchParams(window.location.search)
 const searchId=param.get("id")
 const searchType=param.get("type")
-console.log(searchId);
-console.log(searchType);
 
 //element varible
 let heroSection = document.getElementById("hero")
@@ -167,7 +165,6 @@ async function getDetails(id,type) {
     try{
         const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}`, options)
         const data = await response.json()
-        console.log(data)
         
         heroSection.style.backgroundImage=`url("${BACKDROP_URL}${data.backdrop_path}")`;
         posterImg.src=`${URL_PATH}${data.poster_path}`
@@ -188,8 +185,7 @@ async function getDetails(id,type) {
         }
         
         metaBadge[0].innerHTML=`<i class="fa-solid fa-star"></i> ${data.vote_average.toFixed(1)}`
-        
-        console.log(data.genres.length)
+
         if(data.genres.length===1){
             metaBadge[3].innerHTML=`${data.genres[0].name}`
         }
