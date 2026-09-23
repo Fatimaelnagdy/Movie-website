@@ -7,6 +7,7 @@ body{
     background:var(--section-color);
 }
 :root{
+    --bg-color:#080808;
     --dark-color: #19283f;
     --green-color: #33d1cc;
     --red-color: #ff3150;
@@ -17,7 +18,7 @@ body{
 /* start nav */
 .nav{
     background-color: var(--dark-color);
-    height: 10vh;
+    min-height: 10vh;
 }
 .logo{
     color: var(--green-color);
@@ -31,6 +32,14 @@ body{
     border-radius: 5px;
     border: 1px solid var(--green-color);
     padding: 4px 15px;
+    width: 250px;
+}
+.nav input{
+    caret-color: var(--dark-color);
+}
+.nav input:focus{
+    outline: none;
+    box-shadow:0 0 6px var(--green-color);
 }
 /* end nav */
 /* start slider */
@@ -59,18 +68,18 @@ body{
 .trending{
     padding-bottom:var(--section-padding);
 }
-.trending h2{
+.head{
     color:var(--dark-color);
     position: relative;
     margin-bottom: 30px;
 }
-.trending h2::after{
+.head::after{
     content: "";
     position: absolute;
     width: 50px;
     height: 5px;
     border-radius: 5px;
-    bottom: -4px;
+    bottom: -7px;
     left: 0;
     background-color: var(--green-color);
 }
@@ -97,7 +106,7 @@ body{
 .trending .details h4{
     color: white;
     font-size: 18px;
-     white-space: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }

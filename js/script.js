@@ -1,6 +1,6 @@
 
 const API_KEY = "2be71a89c6c29957ac7dcd067fcc4bf0";
-const URL_PATH="https://image.tmdb.org/t/p/w500"
+const URL_PATH = "https://image.tmdb.org/t/p/w500"
 const BACKDROP_URL = "https://image.tmdb.org/t/p/original";
 const options = {
     method: "GET",
@@ -9,57 +9,103 @@ const options = {
     }
 };
 
+
+// start trailer modal
+const trailerBtn = document.getElementsByClassName("watch-trailer");
+const trailerVideo = document.getElementById("trailerVideo");
+
+async function getTrailerModel(element) {
+    try {
+        const videoResponse = await fetch(`https://api.themoviedb.org/3/movie/${element.id}/videos?api_key=${API_KEY}`, options)
+        const videoData = await videoResponse.json()
+        // console.log(videoData.results)
+
+        const trailer = videoData.results.find(video =>
+            video.site === "YouTube" &&
+            video.type === "Trailer"
+        )
+        if (trailer) {
+            trailerVideo.src = `https://www.youtube.com/embed/${trailer.key}`
+
+            const modal = new bootstrap.Modal(
+                document.getElementById("trailerModal")
+            );
+
+            modal.show();
+        }
+    }
+    catch (err) {
+        console.error(err)
+    }
+}
 // start hero section
 const heroImg = document.getElementsByClassName("hero-img")
-const heroHeader= document.getElementsByClassName("hero-title")
+const heroHeader = document.getElementsByClassName("hero-title")
 const heroRate = document.getElementsByClassName("hero-rate")
 
 async function getPopularMovie() {
-    try{
-        const response=await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,options)
-        const data =await response.json()
-        console.log(data.results)
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`, options)
+        const data = await response.json()
+        // console.log(data.results)
 
-        data.results.slice(0,3).forEach((element,index)=>{
-            heroImg[index].src=`${BACKDROP_URL+element.backdrop_path}`
-            heroHeader[index].textContent=element.title
-            heroRate[index].textContent=element.vote_average.toFixed(1)
+        data.results.slice(0, 3).forEach((element, index) => {
+            heroImg[index].src = `${BACKDROP_URL + element.backdrop_path}`
+            heroHeader[index].textContent = element.title
+            heroRate[index].textContent = element.vote_average.toFixed(1)
+
+            trailerBtn[index].addEventListener("click", () => {
+                getTrailerModel(element)
+            })
         })
 
     }
-    catch(err){
+    catch (err) {
         console.error(err)
     }
 }
 
 getPopularMovie()
 
-const trendingSec =document.getElementsByClassName("trending")
+const trendingSec = document.getElementsByClassName("trending")
 
 // start getTrendingMovies
 async function getTrendingMovies() {
-    try{
-        const response =await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`,options)
-        const data =await response.json()
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`, options)
+        const data = await response.json()
         // console.log(data.results)
 
-        const content=document.createElement("div")
-       content.className="cards row g-3"
-       trendingSec[0].appendChild(content)
+        const content = document.createElement("div")
+        content.className = "cards row g-3"
+        trendingSec[0].appendChild(content)
 
-        data.results.slice(0,10).forEach(element => {
+        data.results.slice(0, 10).forEach((element) => {
 
-        content.innerHTML+=`<div class="card col-lg-2 col-md-3 col-6 overflow-hidden">
-                <img src="${URL_PATH+element.poster_path}"  alt="${element.title}" class="object-fit-cover rounded-3 ">
-                <div class="details rounded-3 ">
-                    <h4>${element.title}</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <span>${element.vote_average.toFixed(1)}</span>
-                </div>
-            </div> `
+            const card = document.createElement("div");
+
+            card.className = "card col-lg-2 col-md-3 col-6 overflow-hidden";
+
+            card.innerHTML = `
+             <img src="${URL_PATH + element.poster_path}"
+             alt="${element.title}"
+             class="object-fit-cover rounded-3">
+
+            <div class="details rounded-3">
+            <h4>${element.title}</h4>
+            <i class="fa-solid fa-star"></i>
+            <span>${element.vote_average.toFixed(1)}</span>
+            </div>
+            `;
+
+            card.addEventListener("click", () => {
+                window.location.href = `details.html?id=${element.id}&type=${element.media_type}`
+            });
+
+            content.appendChild(card);
         });
     }
-    catch(err){
+    catch (err) {
         console.error(err)
     }
 }
@@ -67,28 +113,41 @@ getTrendingMovies();
 
 // start getTrendingTv
 async function getTrendingTv() {
-    try{
-        const response =await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`,options)
-        const data =await response.json()
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`, options)
+        const data = await response.json()
         // console.log(data.results)
 
-        const content=document.createElement("div")
-       content.className="cards row g-3"
-       trendingSec[1].appendChild(content)
+        const content = document.createElement("div")
+        content.className = "cards row g-3"
+        trendingSec[1].appendChild(content)
 
-        data.results.slice(0,10).forEach(element => {
+        data.results.slice(0, 10).forEach((element) => {
 
-        content.innerHTML+=`<div class="card col-lg-2 col-md-3 col-6 overflow-hidden">
-                <img src="${URL_PATH+element.poster_path}"  alt="${element.name}" class="object-fit-cover rounded-3 ">
-                <div class="details rounded-3 ">
-                    <h4>${element.name}</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <span>${element.vote_average.toFixed(1)}</span>
-                </div>
-            </div> `
+            const card = document.createElement("div");
+
+            card.className = "card col-lg-2 col-md-3 col-6 overflow-hidden";
+
+            card.innerHTML = `
+        <img src="${URL_PATH + element.poster_path}"
+             alt="${element.name}"
+             class="object-fit-cover rounded-3">
+
+        <div class="details rounded-3">
+            <h4>${element.name}</h4>
+            <i class="fa-solid fa-star"></i>
+            <span>${element.vote_average.toFixed(1)}</span>
+        </div>
+    `;
+
+            card.addEventListener("click", () => {
+                window.location.href = `details.html?id=${element.id}&type=${element.media_type}`
+            });
+
+            content.appendChild(card);
         });
     }
-    catch(err){
+    catch (err) {
         console.error(err)
     }
 }
@@ -96,28 +155,43 @@ getTrendingTv();
 
 // start getTopMovies
 async function getTopMovies() {
-    try{
-        const response =await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`,options)
-        const data =await response.json()
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`, options)
+        const data = await response.json()
         // console.log(data.results)
 
-        const content=document.createElement("div")
-       content.className="cards row g-3"
-       trendingSec[2].appendChild(content)
+        const content = document.createElement("div")
+        content.className = "cards row g-3"
+        trendingSec[2].appendChild(content)
 
-        data.results.forEach(element => {
 
-        content.innerHTML+=`<div class="card col-lg-2 col-md-3 col-6 overflow-hidden">
-                <img src="${URL_PATH+element.poster_path}"  alt="${element.title}" class="object-fit-cover rounded-3 ">
-                <div class="details rounded-3 ">
-                    <h4>${element.title}</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <span>${element.vote_average.toFixed(1)}</span>
-                </div>
-            </div> `
+        data.results.slice(0, 10).forEach((element) => {
+
+            const card = document.createElement("div");
+
+            card.className = "card col-lg-2 col-md-3 col-6 overflow-hidden";
+
+            card.innerHTML = `
+        <img src="${URL_PATH + element.poster_path}"
+             alt="${element.title}"
+             class="object-fit-cover rounded-3">
+
+        <div class="details rounded-3">
+            <h4>${element.title}</h4>
+            <i class="fa-solid fa-star"></i>
+            <span>${element.vote_average.toFixed(1)}</span>
+        </div>
+    `;
+
+            card.addEventListener("click", () => {
+                window.location.href = `details.html?id=${element.id}&type=${element.media_type}`
+            });
+
+            content.appendChild(card);
         });
+
     }
-    catch(err){
+    catch (err) {
         console.error(err)
     }
 }
@@ -125,28 +199,41 @@ getTopMovies();
 
 // start getTopTv
 async function getTopTv() {
-    try{
-        const response =await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}`,options)
-        const data =await response.json()
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}`, options)
+        const data = await response.json()
         // console.log(data.results)
 
-        const content=document.createElement("div")
-       content.className="cards row g-3"
-       trendingSec[3].appendChild(content)
+        const content = document.createElement("div")
+        content.className = "cards row g-3"
+        trendingSec[3].appendChild(content)
 
-        data.results.forEach(element => {
+        data.results.slice(0, 10).forEach((element) => {
 
-        content.innerHTML+=`<div class="card col-lg-2 col-md-3 col-6 overflow-hidden">
-                <img src="${URL_PATH+element.poster_path}"  alt="${element.name}" class="object-fit-cover rounded-3 ">
-                <div class="details rounded-3 ">
-                    <h4>${element.name}</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <span>${element.vote_average.toFixed(1)}</span>
-                </div>
-            </div> `
+            const card = document.createElement("div");
+
+            card.className = "card col-lg-2 col-md-3 col-6 overflow-hidden";
+
+            card.innerHTML = `
+        <img src="${URL_PATH + element.poster_path}"
+             alt="${element.name}"
+             class="object-fit-cover rounded-3">
+
+        <div class="details rounded-3">
+            <h4>${element.name}</h4>
+            <i class="fa-solid fa-star"></i>
+            <span>${element.vote_average.toFixed(1)}</span>
+        </div>
+    `;
+
+            card.addEventListener("click", () => {
+                window.location.href = `details.html?id=${element.id}&type=${element.media_type}`
+            });
+
+            content.appendChild(card);
         });
     }
-    catch(err){
+    catch (err) {
         console.error(err)
     }
 }

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/details.css"> 
+</head>
+<body>
+    <!-- start nav -->
+    <nav class="navbar nav">
+        <div class="container-fluid gap-1">
+            <div>
+                <a class="navbar-brand logo">MovieNights</a>
+                <a class="nav-ele" href="#">🎬 Movies</a>
+                <a class="nav-ele" href="#">📺 TV Shows</a>
+
+            </div>
+            <form class="d-flex">
+                <input class=" me-5 search" type="text" placeholder="Search Movies & TV Shows" aria-label="Search">
+            </form>
+        </div>
+    </nav>
+    <!-- start hero section -->
+     <section id="hero">
+     </section>
+    <!-- start details content -->
+     <section class="details-content container">
+        <div class="row container">
+            <div class="left col-lg-4 col-md-4 col-12">
+                    <img src="https://image.tmdb.org/t/p/original/mFnfTVADj8yOxwzprYOmTPselk8.jpg" class="object-fit-cover rounded-3" id="poster-img">
+            </div>
+            <div class="right col-lg-8 col-md-8 col-12">
+                <div class="details">
+                    <h2 id="title">Capernaum</h2>
+                    <div class="d-flex justify-content-start flex-wrap">
+                        <span class="meta-badge"></span>
+                        <span class="meta-badge"></span>
+                        <span class="meta-badge"></span>
+                        <span class="meta-badge">Drama</span>
+                        <span class="meta-badge">en</span>
+                    </div>
+                    <div class="bts">
+                        <a href="#trailer" class="watch-trailer" >
+                                <i class="fa-solid fa-play"></i>
+                                Watch Trailer
+                        </a>
+                        <a id="imdb" target="_blank">
+                            IMDb
+                        </a>
+                    </div>
+                </div>
+                <div class="overview">
+                    <h2 class="head">Storyline</h2>
+                    <p id="overview">After running away from his negligent parents, committing a violent crime and being sentenced to five years in jail, a hardened, streetwise 12-year-old Lebanese boy sues his parents in protest of the life they have given him.</p>
+                </div>
+                <div class="top-cast">
+                    <h2 class="head">
+                        Top Cast
+                    </h2>
+                    <!-- <div class="casts d-flex gap-3">
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="" id="cast-img">
+                            <h4 id="cast-title">Zain Al Rafeeeeeeeeee</h4>
+                            <span id="cast-sub-title">Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafeee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                        <div class="cast-item">
+                            <img src="https://image.tmdb.org/t/p/w300/oIy59UFCGwXJcT4SRzn1mOmLaTd.jpg" alt="">
+                            <h4>Zain Al Rafee</h4>
+                            <span>Zain</span>
+                        </div>
+                    </div> -->
+                    
+                </div>
+                <div id="trailer">
+                    <h2 class="head">
+                        Official Trailer
+                    </h2>
+                    <iframe id="trailerVideo" width="100%" height="450" src="" title="Movie Trailer" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 10px;">
+                        </iframe>
+                </div>
+                <div id="more-like" class="trending">
+                    <h2 class="head">
+                        More Like This
+                    </h2>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- start footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>
+                    We build modern and responsive websites with clean design and great
+                    performance.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: example@email.com</p>
+                <p>Phone: +20 100 000 0000</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Your Website | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/details.js"></script>
+</body>
