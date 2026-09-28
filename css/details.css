@@ -1,22 +1,3 @@
-body {
-    font-family: "Roboto", sans-serif;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    background: var(--section-color);
-}
-
-:root {
-    --bg-color: #080808;
-    --dark-color: #19283f;
-    --green-color: #33d1cc;
-    --red-color: #ff3150;
-    --yellow-color: #ffc400;
-    --section-color: #eff7fa;
-    --section-padding: 50px;
-}
-
 /* start hero */
 #hero {
     height: 75vh;

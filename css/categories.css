@@ -1,0 +1,54 @@
+.hero {
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    margin-bottom: var(--section-padding);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    height:90vh;
+    width: 100%;
+    inset: 0;
+    background: linear-gradient(to top, var(--bg-color) 0%, transparent 100%), linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+}
+
+.details{
+    color: rgb(227, 221, 221);
+    position: absolute;
+    z-index: 10;
+    bottom: 8vh;
+    left: 30px;
+}
+.details a{
+    text-decoration: none;
+    border: 1px solid var(--green-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--green-color);
+    margin-top: 10px;
+    transition: 0.5s
+}
+.details a:hover{
+    color: var(--dark-color);
+    background-color: var(--green-color);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3{
+        color: var(--dark-color);
+        font-size: 30px;
+    }
+    a{
+        text-decoration: none;
+        color: var(--red-color);
+    }
+}

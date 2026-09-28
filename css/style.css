@@ -22,6 +22,10 @@ body{
 }
 .logo{
     color: var(--green-color);
+    transition: .5s;
+}
+.logo:hover{
+    color: var(--section-color);
 }
 .nav-ele{
     text-decoration: none;
@@ -113,7 +117,7 @@ body{
 /* end trending mov */
 /* start footer */
 .site-footer {
-  background: #0f172a;
+  background: var(--dark-color);
   color: #fff;
   padding-top: 50px;
   margin-top: 50px;
@@ -155,7 +159,7 @@ body{
 }
 
 .footer-section a:hover {
-  color: #38bdf8;
+  color: var(--green-color);
 }
 
 .footer-bottom {
