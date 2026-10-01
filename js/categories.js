@@ -20,7 +20,7 @@ const spanishSec = document.getElementById("spanish")
 //get search param
 const param = new URLSearchParams(window.location.search)
 const catType = param.get("type")
-console.log(catType)
+// console.log(catType)
 
 //get data
 async function getHeroData(type) {
@@ -28,7 +28,7 @@ async function getHeroData(type) {
         const response = await fetch(`https://api.themoviedb.org/3/${type}/top_rated?api_key=${API_KEY}&language=en-US&page=1`, options)
         const data = await response.json()
         const result = data.results[0]
-        console.log(result)
+        // console.log(result)
         heroSec.style.backgroundImage = `url("${BACKDROP_URL}${result.backdrop_path}")`
 
         let title
@@ -92,7 +92,7 @@ async function showCategories(lang, type, sec) {
 
         sec.prepend(header)
 
-        data.results.slice(0, 6).forEach((element) => {
+        data.results.filter(element =>element.adult=== false && !element.genre_ids.includes(10749)).slice(0, 6).forEach((element) => {
             if (type === "tv") {
                 title = element.name
             }
@@ -118,7 +118,7 @@ async function showCategories(lang, type, sec) {
             card.addEventListener("click", () => {
                 window.location.href = `details.html?id=${element.id}&type=${type}`
             });
-
+            console.log(element)
             content.appendChild(card);
         });
     } catch (err) {
@@ -130,4 +130,3 @@ showCategories("ar", catType, arabicSec)
 showCategories("en", catType, englishSec)
 showCategories("tr", catType, turkishSec)
 showCategories("ko", catType, koreanSec)
-showCategories("es", catType, spanishSec)

@@ -89,7 +89,7 @@ async function getMoreLike(id,type){
         moreLike.appendChild(content)
 
         let title
-        data.results.slice(0, 12).forEach((element) => {
+        data.results.filter(item =>item.adult=== false).slice(0, 12).forEach((element) => {
             if(type==="tv"){
                 title=element.name
             }

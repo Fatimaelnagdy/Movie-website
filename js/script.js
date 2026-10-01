@@ -49,7 +49,7 @@ async function getPopularMovie() {
         const data = await response.json()
         // console.log(data.results)
 
-        data.results.slice(0, 3).forEach((element, index) => {
+        data.results.filter(item =>item.adult=== false).slice(0, 3).forEach((element, index) => {
             heroImg[index].src = `${BACKDROP_URL + element.backdrop_path}`
             heroHeader[index].textContent = element.title
             heroRate[index].textContent = element.vote_average.toFixed(1)
@@ -80,7 +80,7 @@ async function getTrendingMovies() {
         content.className = "cards row g-3"
         trendingSec[0].appendChild(content)
 
-        data.results.slice(0, 10).forEach((element) => {
+        data.results.filter(item =>item.adult=== false).slice(0, 10).forEach((element) => {
 
             const card = document.createElement("div");
 
@@ -122,7 +122,7 @@ async function getTrendingTv() {
         content.className = "cards row g-3"
         trendingSec[1].appendChild(content)
 
-        data.results.slice(0, 10).forEach((element) => {
+        data.results.filter(item =>item.adult=== false).slice(0, 10).forEach((element) => {
 
             const card = document.createElement("div");
 
@@ -165,7 +165,7 @@ async function getTopMovies() {
         trendingSec[2].appendChild(content)
 
 
-        data.results.slice(0, 10).forEach((element) => {
+        data.results.filter(item =>item.adult=== false).slice(0, 10).forEach((element) => {
 
             const card = document.createElement("div");
 
@@ -208,7 +208,7 @@ async function getTopTv() {
         content.className = "cards row g-3"
         trendingSec[3].appendChild(content)
 
-        data.results.slice(0, 10).forEach((element) => {
+        data.results.filter(item =>item.adult=== false).slice(0, 10).forEach((element) => {
 
             const card = document.createElement("div");
 
