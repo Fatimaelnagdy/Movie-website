@@ -84,11 +84,11 @@ async function showCategories(lang, type, sec) {
         }
 
         let header = document.createElement("div")
-        header.className="header d-flex justify-content-between mb-3"
+        header.className="header mb-3"
 
         header.innerHTML=`
             <h3>${languageName} ${type === "movie" ? "Movies" : "Series"}</h3>
-            <a href="#">Show All <i class="fa-solid fa-arrow-right"></i></a>`
+            <a href="filteration.html?type=${type}&lang=${lang}">Show All <i class="fa-solid fa-arrow-right"></i></a>`
 
         sec.prepend(header)
 
